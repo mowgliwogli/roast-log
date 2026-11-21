@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare roasts | Roast log</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="">
+<div class="wrap">
+<header class="site-head">
+<a class="site-name" href="../">Roast log</a>
+<nav><a href="../roasts/">All roasts</a><a href="../compare/">Compare</a></nav>
+</header>
+<main>
+<h1>Compare roasts</h1>
+<p class="lede">Put up to four roasts on one chart. Every roast starts at zero, the moment the beans went in,
+so the lines can be read against each other.</p>
+<div id="compare" data-base="../">
+<div class="filter"><label for="pick-q">Find a roast</label>
+<input id="pick-q" type="search" placeholder="Name, country or date" autocomplete="off"></div>
+<ul class="pick" id="pick-list"></ul>
+<p class="notice" id="pick-note" hidden></p>
+<div id="compare-out"><p class="empty">Loading roasts.</p></div>
+</div>
+<noscript><p class="notice">Comparing roasts needs JavaScript turned on in the browser.</p></noscript>
+</main>
+<footer class="site-foot">
+<p>Coffee roasted at home, a couple of hundred grams at a time.</p>
+<p>Roasts are recorded with <a href="https://artisan-scope.org/">Artisan</a>, free roast-logging software.</p>
+<p id="counting" hidden></p>
+</footer>
+</div>
+<script src="../assets/compare.js"></script>
+<script>
+/* Visit counter: our own few lines, sending the same fields as GoatCounter's script, with no
+   cookies and nothing stored about the visitor. Add #toggle-goatcounter to any address to stop
+   (or restart) counting your own visits in that browser. */
+(function () {
+  var note = document.getElementById("counting");
+  try {
+    if (location.hash === "#toggle-goatcounter") {
+      var off = localStorage.getItem("skipgc") === "t";
+      if (off) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t");
+      if (note) {
+        note.textContent = off ? "Your visits from this browser are counted again." :
+          "Your visits from this browser are no longer counted.";
+        note.hidden = false;
+      }
+    }
+    if (localStorage.getItem("skipgc") === "t") return;
+  } catch (e) {}
+  if (location.protocol === "file:" || /^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) return;
+  if (document.visibilityState === "prerender" || document.body.classList.contains("no-count")) return;
+  var d = { p: location.pathname + location.search, t: document.title, r: document.referrer, s: screen.width,
+            q: location.search, b: navigator.webdriver ? 153 : 0, rnd: Math.random().toString(36).slice(2, 7) };
+  var url = "https://gfeat.goatcounter.com/count?" + Object.keys(d).map(function (k) {
+    return k + "=" + encodeURIComponent(d[k]); }).join("&");
+  try { if (navigator.sendBeacon && navigator.sendBeacon(url)) return; } catch (e) {}
+  var img = new Image(); img.src = url;
+})();
+</script>
+</body>
+</html>

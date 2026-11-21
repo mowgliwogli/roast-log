@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label, roast 10 | Roast log</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="label-page no-count">
+<div class="wrap">
+<header class="site-head">
+<a class="site-name" href="../../../">Roast log</a>
+<nav><a href="../../../roasts/">All roasts</a><a href="../../../compare/">Compare</a></nav>
+</header>
+<main>
+<h1>Label for roast 10</h1>
+<p class="when">Uganda Dry Process Bugoye Muramba, roasted 14 November 2026</p>
+<div class="label-tools">
+<label for="label-size">Label size</label> <select id="label-size"></select>
+<button class="button" id="label-print" type="button">Print label</button>
+<a class="button quiet" id="label-save" href="#">Save as picture</a>
+</div>
+<div class="label-stage"><img id="label-img" alt=""></div>
+<p class="qr-url">The code opens <span id="qr-url"></span></p>
+<p class="notice" id="preview-note" hidden>This is a preview address. Once the site is on GitHub and its address is
+set in site.json, the code will point at the public page.</p>
+<h2>Printing on a Brother QL</h2>
+<p>Choose the size that matches the roll in the printer, then choose Print label and pick the same paper size
+in the print window, with margins set to none. If the browser will not print it cleanly, choose Save as picture
+and drop the picture into Brother's P-touch Editor. It is drawn at 300 dots per inch, the printer's own resolution.</p>
+<p><a href="../">Back to the roast</a></p>
+</main>
+<footer class="site-foot">
+<p>Coffee roasted at home, a couple of hundred grams at a time.</p>
+<p>Roasts are recorded with <a href="https://artisan-scope.org/">Artisan</a>, free roast-logging software.</p>
+<p id="counting" hidden></p>
+</footer>
+</div>
+<script type="application/json" id="label-data">{"name": "Uganda Dry Process Bugoye Muramba", "date": "Roasted 14 Nov 2026", "batch": "Roast 10", "level": "", "foot": "Scan to see this roast", "url": "https://featherfied.com/roast-log/r/10/?ref=label", "file": "roast-10-label"}</script><script src="../../../assets/qrcode.js"></script><script src="../../../assets/label.js"></script>
+<script>
+/* Visit counter: our own few lines, sending the same fields as GoatCounter's script, with no
+   cookies and nothing stored about the visitor. Add #toggle-goatcounter to any address to stop
+   (or restart) counting your own visits in that browser. */
+(function () {
+  var note = document.getElementById("counting");
+  try {
+    if (location.hash === "#toggle-goatcounter") {
+      var off = localStorage.getItem("skipgc") === "t";
+      if (off) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t");
+      if (note) {
+        note.textContent = off ? "Your visits from this browser are counted again." :
+          "Your visits from this browser are no longer counted.";
+        note.hidden = false;
+      }
+    }
+    if (localStorage.getItem("skipgc") === "t") return;
+  } catch (e) {}
+  if (location.protocol === "file:" || /^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) return;
+  if (document.visibilityState === "prerender" || document.body.classList.contains("no-count")) return;
+  var d = { p: location.pathname + location.search, t: document.title, r: document.referrer, s: screen.width,
+            q: location.search, b: navigator.webdriver ? 153 : 0, rnd: Math.random().toString(36).slice(2, 7) };
+  var url = "https://gfeat.goatcounter.com/count?" + Object.keys(d).map(function (k) {
+    return k + "=" + encodeURIComponent(d[k]); }).join("&");
+  try { if (navigator.sendBeacon && navigator.sendBeacon(url)) return; } catch (e) {}
+  var img = new Image(); img.src = url;
+})();
+</script>
+</body>
+</html>
