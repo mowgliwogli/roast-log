@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label, roast 13 | Roast log</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="label-page no-count">
+<div class="wrap">
+<header class="site-head">
+<a class="site-name" href="../../../">Roast log</a>
+<nav><a href="../../../roasts/">All roasts</a><a href="../../../compare/">Compare</a></nav>
+</header>
+<main>
+<h1>Label for roast 13</h1>
+<p class="when">Nicaragua Primos Parainema, roasted 18 November 2026</p>
+<div class="label-tools">
+<label for="label-size">Label size</label> <select id="label-size"></select>
+<button class="button" id="label-print" type="button">Print label</button>
+<a class="button quiet" id="label-save" href="#">Save as picture</a>
+</div>
+<fieldset class="sheet-pos" id="sheet-pos" hidden>
+<legend>Position on the sheet</legend>
+<p>Choose an unused label. After you make the PDF, the next position is picked for you.</p>
+<div class="sheet-grid" id="sheet-grid"></div>
+<p class="sheet-now" id="sheet-pos-now" aria-live="polite"></p>
+<button class="button quiet" id="sheet-test" type="button">Test page for plain paper</button>
+</fieldset>
+<div class="label-stage"><img id="label-img" alt=""></div>
+<p class="qr-url">The code opens <span id="qr-url"></span></p>
+<p class="notice" id="preview-note" hidden>This is a preview address. Once the site is on GitHub and its address is
+set in site.json, the code will point at the public page.</p>
+<h2>Printing on a Brother QL</h2>
+<p>Choose the size that matches the roll in the printer, then choose Print label and pick the same paper size
+in the print window, with margins set to none. If the browser will not print it cleanly, choose Save as picture
+and drop the picture into Brother's P-touch Editor. It is drawn at 300 dots per inch, the printer's own resolution.</p>
+<h2>Printing on Avery 8160 sheets</h2>
+<p>Choose the Avery 8160 size, pick an unused position, then choose Make sheet PDF. The PDF opens in a new tab;
+print it on the label sheet with the scale at 100% (Actual size), not Fit to page. The first time, choose
+Test page for plain paper and print it on ordinary paper: held against the label sheet in front of a light,
+the grey boxes should sit on the labels.</p>
+<p><a href="../">Back to the roast</a></p>
+</main>
+<footer class="site-foot">
+<p>Coffee roasted at home, a couple of hundred grams at a time.</p>
+<p>Roasts are recorded with <a href="https://artisan-scope.org/">Artisan</a>, free roast-logging software.</p>
+<p id="counting" hidden></p>
+</footer>
+</div>
+<script type="application/json" id="label-data">{"name": "Nicaragua Primos Parainema", "date": "Roasted 18 Nov 2026", "batch": "Roast 13", "level": "", "foot": "Scan to see this roast", "url": "https://featherfied.com/roast-log/r/13/?ref=label", "file": "roast-13-label"}</script><script src="../../../assets/qrcode.js"></script><script src="../../../assets/label.js"></script>
+<script>
+/* Visit counter: our own few lines, sending the same fields as GoatCounter's script, with no
+   cookies and nothing stored about the visitor. Add #toggle-goatcounter to any address to stop
+   (or restart) counting your own visits in that browser. */
+(function () {
+  var note = document.getElementById("counting");
+  try {
+    if (location.hash === "#toggle-goatcounter") {
+      var off = localStorage.getItem("skipgc") === "t";
+      if (off) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t");
+      if (note) {
+        note.textContent = off ? "Your visits from this browser are counted again." :
+          "Your visits from this browser are no longer counted.";
+        note.hidden = false;
+      }
+    }
+    if (localStorage.getItem("skipgc") === "t") return;
+  } catch (e) {}
+  if (location.protocol === "file:" || /^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) return;
+  if (document.visibilityState === "prerender" || document.body.classList.contains("no-count")) return;
+  var d = { p: location.pathname + location.search, t: document.title, r: document.referrer, s: screen.width,
+            q: location.search, b: navigator.webdriver ? 153 : 0, rnd: Math.random().toString(36).slice(2, 7) };
+  var url = "https://gfeat.goatcounter.com/count?" + Object.keys(d).map(function (k) {
+    return k + "=" + encodeURIComponent(d[k]); }).join("&");
+  try { if (navigator.sendBeacon && navigator.sendBeacon(url)) return; } catch (e) {}
+  var img = new Image(); img.src = url;
+})();
+</script>
+</body>
+</html>
